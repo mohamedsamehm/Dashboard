@@ -1,0 +1,58 @@
+.d-flex {
+  display: flex;
+}
+.d-inline-flex {
+  display: flex;
+}
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+.g-14 {
+  gap: 14px;
+}
+.w-100 {
+  width: 100%;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rounded-circle {
+  border-radius: 50%;
+}
+.align-items-center {
+  align-items: center;
+}
+.m-0 {
+  margin: 0;
+}
+.m-auto {
+  margin: auto;
+}
+.d-block {
+  display: block;
+}
+.text-center {
+  text-align: center;
+}
+
+.r-progress-bar > circle {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.25s ease;
+  stroke: #607d8b;
+  stroke-width: 20px;
+}
+
+.r-progress-bar > .bar {
+  stroke: #2196f3;
+  stroke-linecap: round;
+}

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="assets/css/main.css">
+ <title>Dashboard</title>
+</head>
+
+<body>
+ <div class="container">
+  <main>
+   <div class="currency-wrapper">
+    <div class="currency">
+     <strong class="cu-type">Bitcoin</strong>
+     <p class="cu-price">22910 USD</p>
+    </div>
+    <div class="currency">
+     <strong class="cu-type">Ethereum</strong>
+     <p class="cu-price">1649.12 USD</p>
+    </div>
+    <div class="currency">
+     <strong class="cu-type">Dextools</strong>
+     <p class="cu-price">0.199627 USD</p>
+    </div>
+    <div class="currency">
+     <strong class="cu-type">Dext/Eth</strong>
+     <p class="cu-price">0.0001211 ETH</p>
+    </div>
+   </div>
+   <div class="widgets-wrapper">
+    <div class="widgets widgets-1">
+     <div class="widget">
+      <h5 class="title">Daily burn</h5>
+      <div id="daily-burn-chart"></div>
+     </div>
+     <div class="widget">
+      <h5 class="title">Daily total supply</h5>
+      <canvas id="daily-total-supply-chart"></canvas>
+     </div>
+    </div>
+    <div class="widgets widgets-2">
+     <div class="widget d-flex justify-content-start align-items-center">
+      <div class="widget-circle">
+       <div id="circle-chart-1"></div>
+      </div>
+      <div class="widget-text">
+       <span class="top-text">Burn Today</span>
+       <div>
+        <span class="number">5000</span>
+        <span>DEXT</span>
+       </div>
+       <span>0.3% of supply</span>
+      </div>
+     </div>
+     <div class="widget d-flex justify-content-start align-items-center">
+      <div class="widget-circle">
+       <div id="circle-chart-2"></div>
+      </div>
+      <div class="widget-text">
+       <span class="top-text">Burn Today</span>
+       <div>
+        <span class="number">8000</span>
+        <span>DEXT</span>
+       </div>
+       <span>0.3% of supply</span>
+      </div>
+     </div>
+     <div class="widget d-flex justify-content-start align-items-center">
+      <div class="widget-circle">
+       <div id="circle-chart-3"></div>
+      </div>
+      <div class="widget-text">
+       <span class="top-text">Burn Today</span>
+       <div>
+        <span class="number">10 000</span>
+        <span>DEXT</span>
+       </div>
+       <span>0.3% of supply</span>
+      </div>
+     </div>
+    </div>
+    <div class="widgets widgets-3">
+     <div class="widget">
+      <div class="widget-text">
+       <div class="number">14124</div>
+       <div class="text m-0">
+        <span>Holders</span>
+        <span>None in 24h</span>
+       </div>
+      </div>
+      <div class="arrows-top">
+       <img src="assets/imgs/arrow-top.svg" alt="" srcset="">
+      </div>
+     </div>
+     <div class="widget">
+      <div class="widget-text">
+       <h5 class="m-0"><strong>Price</strong> of updating social</h5>
+       <div class="text m-0">
+        <div>
+         <span class="number">2500</span>
+         <span>DEXT</span>
+        </div>
+        <div>0.314 ETH</div>
+       </div>
+      </div>
+      <div class="arrows-bottom">
+       <img src="assets/imgs/arrow-bottom.svg" alt="" srcset="">
+      </div>
+     </div>
+     <div class="widget"></div>
+     <div class="widget"></div>
+    </div>
+    <div class="widgets widgets-4">
+     <div class="widget d-flex justify-content-between align-items-center">
+      <div class="widget-text d-flex flex-column g-14">
+       <div class="top-text d-flex align-items-center">
+        <div class="icon rounded-circle flex-center">
+         <img src="assets/imgs/eth.svg" alt="">
+        </div>
+        <span>ETH</span>
+       </div>
+       <p>Aggregator Wallet</p>
+       <div>
+        <span class="number">0.0</span>
+        <span>DEXT</span>
+       </div>
+      </div>
+      <div class="widget-chart">
+       <div id="stacked-chart-1"></div>
+      </div>
+     </div>
+     <div class="widget d-flex justify-content-between align-items-center">
+      <div class="widget-text d-flex flex-column g-14">
+       <div class="top-text d-flex align-items-center">
+        <div class="icon rounded-circle flex-center">
+         <img src="assets/imgs/bsc.svg" alt="">
+        </div>
+        <span>BSC</span>
+       </div>
+       <p>Aggregator Wallet</p>
+       <div>
+        <span class="number">0.0</span>
+        <span>DEXT</span>
+       </div>
+      </div>
+      <div class="widget-chart">
+       <div id="stacked-chart-2"></div>
+      </div>
+     </div>
+     <div class="widget d-flex justify-content-between align-items-center">
+      <div class="widget-text d-flex flex-column g-14">
+       <div class="top-text d-flex align-items-center">
+        <div class="icon rounded-circle flex-center">
+         <img src="assets/imgs/eth.svg" alt="">
+        </div>
+        <span>ETH</span>
+       </div>
+       <p>Social Wallet</p>
+       <div>
+        <span class="number">0.0</span>
+        <span>DEXT</span>
+       </div>
+      </div>
+      <div class="widget-chart">
+       <div id="stacked-chart-3"></div>
+      </div>
+     </div>
+     <div class="widget d-flex justify-content-between align-items-center">
+      <div class="widget-text d-flex flex-column g-14">
+       <div class="top-text d-flex align-items-center">
+        <div class="icon rounded-circle flex-center">
+         <img src="assets/imgs/bsc.svg" alt="">
+        </div>
+        <span>BSC</span>
+       </div>
+       <p>Social Wallet</p>
+       <div>
+        <span class="number">0.0</span>
+        <span>DEXT</span>
+       </div>
+      </div>
+      <div class="widget-chart">
+       <div id="stacked-chart-4"></div>
+      </div>
+     </div>
+    </div>
+    <div class="widgets widgets-5">
+     <div class="widget d-flex justify-content-between align-items-center">
+      <h5 class="m-0"><strong class="d-block">ETH</strong>In Aggergator wallet</h5>
+      <div>
+       <span class="number">0.07</span>
+       <span>ETH</span>
+      </div>
+     </div>
+     <div class="widget d-flex justify-content-between align-items-center">
+      <h5 class="m-0"><strong class="d-block">BNB</strong>In Aggergator wallet</h5>
+      <div>
+       <span class="number">0.00</span>
+       <span>BNB</span>
+      </div>
+     </div>
+     <div class="widget d-flex justify-content-between align-items-center">
+      <h5 class="m-0"><strong class="d-block">ETH</strong>In Social wallet</h5>
+      <div>
+       <span class="number">0.07</span>
+       <span>ETH</span>
+      </div>
+     </div>
+     <div class="widget d-flex justify-content-between align-items-center">
+      <h5 class="m-0"><strong class="d-block">BNB</strong>In Social wallet</h5>
+      <div>
+       <span class="number">0.07</span>
+       <span>BNB</span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+  <aside class="d-flex flex-column">
+   <div class="banner flex-center m-auto w-100">
+    <span>Banner</span>
+   </div>
+   <div class="made-by-image">
+    <span class="made-by text-center d-block">Made by</span>
+    <div class="image">
+     <img src="assets/imgs/scritta-bianco.png" alt="" srcset="">
+    </div>
+   </div>
+  </aside>
+ </div>
+ <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+ <script src="assets/js/main.js"></script>
+</body>
+
+</html>
