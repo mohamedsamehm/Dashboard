@@ -1,87 +1,7 @@
-.container {
-  display: flex;
-  flex-direction: row;
-  gap: 34px;
-  min-height: 100vh;
-  max-width: 1683px;
-  margin: auto;
-  padding: 60px 16px 55px 16px;
-  @media (max-width: $maxMedium) {
-    flex-direction: column;
-    padding: 32px 23px 8px 19px;
-  }
-}
 main {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  .currency-wrapper {
-    display: flex;
-    gap: 26px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-bottom: 39px;
-    .currency {
-      background: rgba(24, 38, 48, 0.8);
-      border-radius: 50px;
-      padding: 10.5px 14px 10.5px 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: relative;
-      flex: 1 1 auto;
-      min-width: 290px;
-      gap: 10px;
-      .cu-type {
-        font-style: normal;
-        font-weight: 500;
-        font-size: 26px;
-        line-height: 30px;
-      }
-      .cu-price {
-        font-weight: 300;
-        font-size: 26px;
-        line-height: 30px;
-        margin-right: -3px;
-      }
-      &:first-of-type {
-        &::before {
-          background: #ff9416;
-          box-shadow: 0px 0px 10px rgba(255, 148, 22, 0.4);
-        }
-      }
-      &:nth-of-type(2) {
-        &::before {
-          background: #627eea;
-          box-shadow: 0px 0px 10px rgba(98, 126, 234, 0.4);
-        }
-      }
-      &:nth-of-type(3) {
-        &::before {
-          background: #00b0ce;
-          box-shadow: 0px 0px 10px rgba(0, 179, 212, 0.4);
-        }
-      }
-      &:last-of-type {
-        &::before {
-          background: #be62ea;
-          box-shadow: 0px 0px 10px rgba(190, 98, 234, 0.4);
-        }
-      }
-      &::before {
-        content: "";
-        width: 14px;
-        height: 14px;
-        border-radius: 50%;
-        position: absolute;
-        left: 18px;
-        top: 18.5px;
-      }
-      p {
-        margin: 0;
-      }
-    }
-  }
   .widgets-wrapper {
     display: flex;
     flex-direction: column;
@@ -90,7 +10,7 @@ main {
     gap: 22px;
     .widgets {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(331px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
       gap: 22px;
       @media (max-width: $maxMedium) {
         display: flex;
@@ -103,20 +23,26 @@ main {
         border-radius: 18px;
         flex: 1 0 auto;
         height: 100%;
-        min-width: 285px;
         flex-wrap: wrap;
-        min-width: 330px;
         overflow: hidden;
+        height: inherit;
         @media (max-width: $maxMedium) {
-          width: 100%;
-          min-width: auto;
+          min-width: 285px;
+          width: fit-content;
         }
       }
       &.widgets-1 {
         gap: 17px;
-        // min-height: 27%;
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
         .widget {
           padding: 16px 25px;
+          @media (max-width: $maxMedium) {
+            width: 100%;
+            .title {
+              font-size: 15px;
+              line-height: 18px;
+            }
+          }
           .title {
             font-weight: 500;
             font-size: 20px;
@@ -150,33 +76,82 @@ main {
       }
       &.widgets-2 {
         gap: 22px;
-        // min-height: 20%;
-        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
         .widget {
-          padding: 18px 18px 18px 36px;
+          padding: 18px;
+          @media (max-width: 1600px) {
+            padding: 15px 17px;
+          }
+          @media (max-width: $maxMedium) {
+            gap: 23.2px;
+          }
           .widget-circle {
             width: 100%;
             height: 100%;
             max-width: 110px;
             max-height: 110px;
-            margin-right: 54px;
+            @media (max-width: $maxXLarge) {
+              max-width: 86.8px;
+              max-height: 86.8px;
+            }
           }
           .widget-text {
             display: flex;
             justify-content: center;
             align-items: flex-start;
             flex-direction: column;
+            @media (max-width: 1600px) {
+              .top-text {
+                font-size: 18px !important;
+              }
+              .number {
+                font-size: 50.9492px !important;
+              }
+              .bottom-text {
+                font-size: 16px !important;
+              }
+            }
+            @media (max-width: 1500px) {
+              .top-text {
+                font-size: 15px !important;
+                line-height: 18px;
+              }
+              .number {
+                font-size: 41.783px !important;
+                line-height: 48px;
+              }
+              .bottom-text {
+                font-size: 13px !important;
+              }
+            }
+            @media (max-width: $maxXLarge) {
+              .bottom-text {
+                font-size: 10px;
+                line-height: 12px;
+              }
+            }
             .top-text {
               font-weight: 400;
               font-size: 20px;
               line-height: 23px;
+              text-transform: uppercase;
             }
             .number {
               font-family: "Play", sans-serif;
               font-style: normal;
               font-weight: 400;
               font-size: 52.9492px;
-              margin-right: 16px;
+              margin-right: 10px;
+              @media (max-width: 1500px) {
+                margin-right: 4px;
+              }
+              span {
+                &::after {
+                  content: " ";
+                }
+                @media (max-width: 1600px) {
+                  display: none;
+                }
+              }
             }
             .bottom-text {
               font-style: normal;
@@ -218,7 +193,12 @@ main {
         }
       }
       &.widgets-3 {
-        // min-height: 11.5%;
+        @media (max-width: 1650px) {
+          grid-template-columns: repeat(2, 1fr);
+          .widget {
+            min-height: 65px;
+          }
+        }
         .widget {
           background: #182630;
           box-shadow: -4px -4px 10px rgba(51, 81, 102, 0.5),
@@ -226,11 +206,16 @@ main {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 28px 21.5px;
+          padding: 14px 16px;
+          @media (max-width: 1700px) {
+            padding: 14px;
+          }
           .widget-text {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
+            flex: 1;
+            gap: 13px;
           }
           .number {
             font-family: "Play";
@@ -239,6 +224,22 @@ main {
             font-size: 44px;
             line-height: 51px;
             letter-spacing: 1.4px;
+            @media (max-width: 1700px) {
+              font-size: 40px;
+            }
+            @media (max-width: $maxMedium) {
+              font-size: 35px;
+              line-height: 40px;
+            }
+          }
+          .arrows {
+            max-height: 62px;
+            img {
+              max-height: inherit;
+            }
+            @media (max-width: $maxMedium) {
+              max-height: 42px;
+            }
           }
           &:first-of-type {
             background: radial-gradient(
@@ -249,9 +250,6 @@ main {
               #182630;
             box-shadow: -4px -4px 10px rgba(51, 81, 102, 0.5),
               3px 3px 4px rgba(0, 0, 0, 0.1), 10px 10px 30px rgba(0, 0, 0, 0.4);
-            .widget-text {
-              gap: 13px;
-            }
             .text {
               display: flex;
               justify-content: center;
@@ -262,13 +260,23 @@ main {
                 font-style: normal;
                 line-height: 16px;
                 font-size: 14px;
+                @media (max-width: 1700px) {
+                  font-size: 13px;
+                }
                 &:first-of-type {
                   font-weight: 700;
                   text-transform: uppercase;
                   margin-bottom: 8px;
+                  @media (max-width: 1700px) {
+                    margin-bottom: 4px;
+                  }
                 }
                 &:last-of-type {
                   font-weight: 400;
+                  @media (max-width: $maxMedium) {
+                    font-size: 12px;
+                    line-height: 14px;
+                  }
                 }
               }
             }
@@ -282,15 +290,36 @@ main {
               #182630;
             box-shadow: -4px -4px 10px rgba(51, 81, 102, 0.5),
               3px 3px 4px rgba(0, 0, 0, 0.1), 10px 10px 30px rgba(0, 0, 0, 0.4);
+            gap: 10px;
+            @media (min-width: 1700px) {
+              gap: 20px;
+            }
+            @media (max-width: $maxMedium) {
+              h5 {
+                position: relative;
+                order: 1;
+              }
+            }
             .widget-text {
               align-items: flex-start;
               gap: 10px;
+              justify-content: space-between;
+              @media (max-width: $maxMedium) {
+                gap: 17px;
+                justify-content: flex-start;
+              }
             }
             .text {
               display: flex;
               justify-content: center;
               align-items: flex-end;
               flex-direction: column;
+              .top-text {
+                margin-bottom: 8px;
+                @media (max-width: 1700px) {
+                  margin-bottom: 5px;
+                }
+              }
             }
             .number {
               font-family: "Play";
@@ -299,30 +328,76 @@ main {
               font-size: 30px;
               line-height: 35px;
               letter-spacing: 1.4px;
+              @media (max-width: 1700px) {
+                line-height: 25px;
+              }
+              @media (max-width: $maxMedium) {
+                font-size: 26.9802px;
+                line-height: 22px !important;
+              }
             }
             h5 {
               margin: 0;
               font-style: normal;
               line-height: 26px;
-              max-width: 106px;
               font-size: 16px;
               font-weight: 300;
+              @media (max-width: 1700px) {
+                font-size: 14px;
+                line-height: 16px;
+                strong {
+                  font-size: 20px;
+                }
+              }
+              @media (max-width: $maxMedium) {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 14px;
+                strong {
+                  font-weight: 700 !important;
+                  font-size: 14px !important;
+                  line-height: 16px !important;
+                  text-transform: capitalize !important;
+                }
+              }
               strong {
                 font-size: 22px;
                 font-weight: 500;
                 text-transform: uppercase;
-                display: block;
               }
             }
           }
         }
       }
       &.widgets-4 {
-        // min-height: 22%;
+        @media (max-width: 1650px) {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
         .widget {
           padding: 20px 23px;
+          @media (max-width: 1700px) {
+            padding: 20px;
+            .widget-text {
+              .top-text {
+                .icon {
+                  width: 32px !important;
+                  height: 32px !important;
+                  margin-right: 8px !important;
+                }
+                span {
+                  font-size: 18px !important;
+                }
+              }
+              p {
+                font-size: 13px !important;
+              }
+              .number {
+                font-size: 35px !important;
+              }
+            }
+          }
+
           .widget-text {
-            // margin-right: 29px;
             .top-text {
               .icon {
                 width: 36px;
@@ -342,7 +417,6 @@ main {
               line-height: 16px;
               margin: 0;
               text-transform: uppercase;
-              max-width: 121px;
             }
             .number {
               font-family: "Play";
@@ -353,7 +427,6 @@ main {
             }
           }
           .widget-chart {
-            // width: 165px;
             height: 120px;
           }
           &:first-of-type {
@@ -420,12 +493,28 @@ main {
         }
       }
       &.widgets-5 {
-        // min-height: 10.5%;
         gap: 24px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        @media (max-width: 1500px) {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
         .widget {
           padding: 13px 19px;
+          @media (max-width: 1700px) {
+            padding: 13px;
+            gap: 10px;
+            h5 {
+              font-size: 14px !important;
+              strong {
+                font-size: 20px !important;
+              }
+            }
+            .number {
+              font-size: 37px !important;
+            }
+          }
           h5 {
-            line-height: 26px;
+            line-height: 18px;
             text-transform: uppercase;
             font-weight: 300;
             font-size: 16px;
@@ -483,61 +572,6 @@ main {
           }
         }
       }
-    }
-  }
-}
-aside {
-  @media (min-width: $minLarge) {
-    max-width: 214px;
-  }
-  .banner {
-    flex: 1 1 auto;
-    background: #415798;
-    box-shadow: inset 10px 10px 40px rgba(0, 0, 0, 0.5);
-    border-radius: 18px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 47px;
-    text-transform: uppercase;
-    @media (min-width: $minLarge) {
-      margin-bottom: 25px;
-      max-width: 214px;
-      span {
-        transform: rotate(-90deg);
-        display: block;
-        margin-bottom: -11px;
-      }
-    }
-    @media (max-width: $maxMedium) {
-      border-radius: 9.40224px;
-      padding: 30px 0;
-    }
-  }
-  .made-by-image {
-    @media (max-width: $maxMedium) {
-      flex-direction: row;
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-end;
-      img {
-        max-width: 107px;
-      }
-    }
-  }
-  .made-by {
-    text-transform: uppercase;
-    font-style: italic;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 21px;
-    @media (max-width: $maxMedium) {
-      max-width: 44px;
-      text-align: right;
-      margin-top: 10px;
-      margin-right: 14px;
-      font-size: 14px;
-      line-height: 16px;
     }
   }
 }

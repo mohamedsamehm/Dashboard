@@ -10,3 +10,23 @@ body {
 img {
   max-width: 100%;
 }
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 34px;
+  min-height: 100vh;
+  margin: auto;
+  padding: 60px 0 55px 0;
+  @media (min-width: 1870px) {
+    max-width: 1651px;
+  }
+  @media (min-width: $minXLarge) and (max-width: 1869.98px) {
+    max-width: 88.3%;
+  }
+  @media (max-width: $maxLarge) {
+    padding: 32px 23px 8px 19px;
+  }
+  @media (max-width: $maxMedium) {
+    flex-direction: column;
+  }
+}

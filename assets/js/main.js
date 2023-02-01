@@ -3,19 +3,22 @@
   var circle2 = document.getElementById("circle-chart-2");
   var circle3 = document.getElementById("circle-chart-3");
   var circleChart1 = echarts.init(circle1, null, {
-    width: 110,
-    height: 110,
+    width: window.innerWidth > 1400 ? 110 : 86.8,
+    height: window.innerWidth > 1400 ? 110 : 86.8,
   });
   var optionCircle1;
   var optionCircle2;
   var optionCircle3;
+  var perYear1 = 10;
+  var perYear2 = 20;
+  var perYear3 = 30;
   var circleChart2 = echarts.init(circle2, null, {
-    width: 110,
-    height: 110,
+    width: window.innerWidth > 1400 ? 110 : 86.8,
+    height: window.innerWidth > 1400 ? 110 : 86.8,
   });
   var circleChart3 = echarts.init(circle3, null, {
-    width: 110,
-    height: 110,
+    width: window.innerWidth > 1400 ? 110 : 86.8,
+    height: window.innerWidth > 1400 ? 110 : 86.8,
   });
 
   optionCircle1 = {
@@ -25,6 +28,7 @@
         startAngle: 270,
         endAngle: -450,
         padding: 0,
+        max: 30,
         pointer: {
           show: false,
         },
@@ -55,17 +59,26 @@
         },
         data: [
           {
-            value: 40,
-            name: "% \n per year",
+            value: perYear1,
+            name: "%",
             title: {
               color: "white",
-              offsetCenter: ["0%", "0%"],
-              fontSize: 18,
+              offsetCenter: ["0%", "-20%"],
+              fontSize: window.innerWidth > 1400 ? 30 : 23.6735,
               fontWeight: 500,
               fontFamily: "Roboto",
             },
             detail: {
               show: false,
+              show: true,
+              fontSize: window.innerWidth > 1400 ? 18 : 14,
+              fontWeight: 300,
+              fontFamily: "Roboto",
+              color: "white",
+              offsetCenter: ["0%", "25%"],
+              formatter: function (value) {
+                return "per year";
+              },
             },
           },
         ],
@@ -83,6 +96,7 @@
         startAngle: 270,
         endAngle: -450,
         padding: 0,
+        max: 30,
         pointer: {
           show: false,
         },
@@ -113,17 +127,26 @@
         },
         data: [
           {
-            value: 40,
-            name: "% \n per year",
+            value: perYear2,
+            name: "%",
             title: {
               color: "white",
-              offsetCenter: ["0%", "0%"],
-              fontSize: 18,
+              offsetCenter: ["0%", "-20%"],
+              fontSize: window.innerWidth > 1400 ? 30 : 23.6735,
               fontWeight: 500,
               fontFamily: "Roboto",
             },
             detail: {
               show: false,
+              show: true,
+              fontSize: window.innerWidth > 1400 ? 18 : 14,
+              fontWeight: 300,
+              fontFamily: "Roboto",
+              color: "white",
+              offsetCenter: ["0%", "25%"],
+              formatter: function (value) {
+                return "per year";
+              },
             },
           },
         ],
@@ -141,6 +164,7 @@
         startAngle: 270,
         endAngle: -450,
         padding: 0,
+        max: 30,
         pointer: {
           show: false,
         },
@@ -171,17 +195,26 @@
         },
         data: [
           {
-            value: 40,
-            name: "% \n per year",
+            value: perYear3,
+            name: "%",
             title: {
               color: "white",
-              offsetCenter: ["0%", "0%"],
-              fontSize: 18,
+              offsetCenter: ["0%", "-20%"],
+              fontSize: window.innerWidth > 1400 ? 30 : 23.6735,
               fontWeight: 500,
               fontFamily: "Roboto",
             },
             detail: {
               show: false,
+              show: true,
+              fontSize: window.innerWidth > 1400 ? 18 : 14,
+              fontWeight: 300,
+              fontFamily: "Roboto",
+              color: "white",
+              offsetCenter: ["0%", "25%"],
+              formatter: function (value) {
+                return "per year";
+              },
             },
           },
         ],
